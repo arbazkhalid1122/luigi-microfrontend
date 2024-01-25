@@ -1,24 +1,22 @@
-import React, { Component } from 'react';
+import React, { useState,useEffect } from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter, Route } from 'react-router-dom';
-import Home from './views/home.js';
-import Sample1 from './views/sample1.js';
-import Sample2 from './views/sample2.js';
-import { addInitListener } from '@luigi-project/client';
 import './index.css';
+import LuigiClient from '@luigi-project/client';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    addInitListener(() => {
-      console.log('Luigi Client initialized.');
-    });
-  }
-  render() {
-    return (
-    <h1>React js</h1>
-    );
-  }
-}
+const App = () => {
+  const [count, setCount] = useState(0);
+useEffect(() => {
+  const counts =  LuigiClient.getNodeParams().total
+  setCount(counts)
+}, [count])
+
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', height: '70vh' }}>
+      <div>React</div>
+      {count > 0 && <p>Total Count is: {count}</p>}
+    </div>
+  );
+};
 
 render(<App />, document.getElementById('root'));
+

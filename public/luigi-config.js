@@ -12,7 +12,7 @@ Luigi.setConfig({
           {
             category: "Links",
             label: "React Repo",
-            viewUrl: "http://localhost:3000/sampleapp.html#/home/",
+            viewUrl: "http://localhost:3001/sampleapp.html#/home/",
             pathSegment: "react"
           },
           {
@@ -20,6 +20,11 @@ Luigi.setConfig({
             label: "Vue Repo",
             viewUrl: "http://localhost:8080/sampleapp.html#/home/",
             pathSegment: "vue",
+          },
+          {
+            category: "Links",
+            label: "Back to home",
+            viewUrl:'/home',
           }
         ]
       }
