@@ -1,52 +1,25 @@
+
+
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Luigi App</title>
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1"
+    />
+    <link
+      href="https://unpkg.com/@sap-theming/theming-base-content@11.1.35/content/Base/baseLib/sap_fiori_3/css_variables.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/@luigi-project/core@2.7.2/luigi.css" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  </head>
 
-<head>
-  <script src="https://cdn.jsdelivr.net/npm/@luigi-project/client@2.7.2/luigi-client.js"></script>
-  <style type="text/css">
-    .fd-panel {
-      padding: 15px;
-    }
-  </style>
-</head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script src="https://unpkg.com/@luigi-project/core@2.7.2/luigi.js"></script>
 
-<body>
-  <div>
-    <h1>Home</h1>
-    <div>
-      <p class="counter">Count: <span id="count">0</span></p>
-      <button style="margin-top: 10px; margin-bottom: 10px" onclick="incrementCount()">Count</button>
-    </div>
-    <button onclick="navigateToSample()">Navigate to react</button>
-    <button onclick="navigateToVue()">Navigate to vue</button>
-    <div style="border: none;outline: none;">
-      <iframe src="http://localhost:3001/sampleapp.html#/sample1/" width="500" height=200 style="border: none;"></iframe>
-    </div>
-    <div>
-      <iframe src="http://localhost:8080/sampleapp.html#/home/" style="border: none;"></iframe>
-    </div>
-  </div>
-  <div class="fd-panel" id="init-text"></div>
-
-  <script>
-    function navigateToSample() {
-      LuigiClient.linkManager().withParams({total:count}).navigate('/home/react/');
-    }
-    function navigateToVue() {
-      LuigiClient.linkManager().withParams({total:count}).navigate('/home/vue/');
-    }
-    let count = 0;
-
-function incrementCount() {
-  count++;
-  updateCounter();
-
-}
-
-function updateCounter() {
-  document.getElementById('count').innerText = count;
-}
-  </script>
-</body>
-
+    <script src="./luigi-config.js"></script>
+  </body>
 </html>

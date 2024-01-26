@@ -11,8 +11,8 @@ useEffect(() => {
 }, [count])
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', height: '70vh' }}>
-      <div>React</div>
+    <div style={{height: '70vh' }}>
+      <h1>React</h1>
       {count > 0 && <p>Total Count is: {count}</p>}
     </div>
   );

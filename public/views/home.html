@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <script src="https://cdn.jsdelivr.net/npm/@luigi-project/client@2.7.2/luigi-client.js"></script>
@@ -12,7 +12,7 @@
     <div>
       <h1>Home</h1>
       <div style="border: none;outline: none;">
-        <iframe src="http://localhost:3000/sampleapp.html#/sample1/" style="border: none;"></iframe>
+        <iframe src="http://localhost:3001/sampleapp.html#/sample1/" style="border: none;"></iframe>
       </div>
       <div>
         <iframe src="http://localhost:8080/sampleapp.html#/home/"  style="border: none;"></iframe>
@@ -21,4 +21,56 @@
     <div class="fd-panel" id="init-text"></div>
 
   </body>
+</html> -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/@luigi-project/client@2.7.2/luigi-client.js"></script>
+  <style type="text/css">
+    .fd-panel {
+      padding: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <h1>Home</h1>
+    <div>
+      <p class="counter">Count: <span id="count">0</span></p>
+      <button style="margin-top: 10px; margin-bottom: 10px" onclick="incrementCount()">Count</button>
+    </div>
+    <button onclick="navigateToSample()">Navigate to react</button>
+    <button onclick="navigateToVue()">Navigate to vue</button>
+    <div style="border: none;outline: none;">
+      <iframe src="http://localhost:3001/sampleapp.html#/sample1/" width="500" height=200 style="border: none;"></iframe>
+    </div>
+    <div>
+      <iframe src="http://localhost:8080/sampleapp.html#/home/" style="border: none;"></iframe>
+    </div>
+  </div>
+  <div class="fd-panel" id="init-text"></div>
+
+  <script>
+    function navigateToSample() {
+      LuigiClient.linkManager().withParams({total:count}).navigate('/home/react/');
+    }
+    function navigateToVue() {
+      LuigiClient.linkManager().withParams({total:count}).navigate('/home/vue/');
+    }
+    let count = 0;
+
+function incrementCount() {
+  count++;
+  updateCounter();
+
+}
+
+function updateCounter() {
+  document.getElementById('count').innerText = count;
+}
+  </script>
+</body>
+
 </html>
